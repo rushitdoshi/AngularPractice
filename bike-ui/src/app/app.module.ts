@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewRegistrationComponent } from './components/view-registration/view-registration.component';
+import { CallbackComponent } from './components/callback/callback.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ViewRegistrationComponent } from './components/view-registration/view-r
     AppComponent,
     AdminComponent,
     HomeComponent,
-    ViewRegistrationComponent
+    ViewRegistrationComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
