@@ -1,7 +1,9 @@
 ### Run this app using below 2 commands using internal server, all depndencies are already available at https://unpkg.com
 
+```
 $ npm install -g serve
 $ serve .
+```
 
 # Creating a Data-bound Component
 ### [Angular 2 Fundamentals](https://app.pluralsight.com/courses/angular2-fundamentals) Practice Exercise
