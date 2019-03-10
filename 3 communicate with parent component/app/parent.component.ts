@@ -7,11 +7,15 @@ import { Component } from '@angular/core';
       <h1>Congratulations!</h1>
       <h3>You set the parent's counter to: {{currentCounter}}</h3>
     </div>
-    <child></child>
+    <child (counterCaptured)="setCounter($event)"></child>
   `
   
 })
 export class ParentComponent {
-  currentCounter
+  currentCounter: any;
+
+  setCounter(data: any) {
+    this.currentCounter = data;
+  }
   
 }

@@ -8,13 +8,14 @@ import { Component, Output, EventEmitter } from '@angular/core'
   `
 })
 export class ChildComponent { 
-  counter = 0
+  counter = 0;
+  @Output() counterCaptured:EventEmitter = new EventEmitter();
   
   ngOnInit() {
     setInterval(() => {this.counter++}, 1000)
   }
   
   buttonClicked() {
-    
+    this.counterCaptured.emit(this.counter);
   }
 }
