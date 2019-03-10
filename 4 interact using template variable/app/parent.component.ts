@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'parent',
   template: `
-    <child></child>
-    <button class="btn btn-primary">Stop Timer</button>
+  <child #timer></child>
+  <button class="btn btn-primary" (click)="timer.stopTimer()" >Stop Timer</button>
   `
 })
 export class ParentComponent {

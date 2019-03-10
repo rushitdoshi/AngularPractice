@@ -11,16 +11,16 @@ import { Component, Output, EventEmitter } from '@angular/core'
   `
 })
 export class ChildComponent { 
-  private stopped = false
-  private counter = 0
-  private intervalId
+  private stopped = false;
+  private counter = 0;
+  private intervalId: any;
   
   ngOnInit() {
     this.intervalId = setInterval(() => {this.counter++}, 1000)
   }
   
   stopTimer() {
-    clearInterval(this.intervalId)
-    this.stopped = true
+    clearInterval(this.intervalId);
+    this.stopped = true;
   }
 }
