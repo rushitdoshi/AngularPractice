@@ -17,4 +17,21 @@ export class EventsListComponent {
     {name:'UN Angular Summit', date: '6/10/2037', time: '8am', location: {address: 'The UN Angular Center', city: 'New York', country: 'USA'}, format:"InPerson"}
   ]
 
+  getTitleStyle(eventFormat:any): any {
+    
+    // Direct return big object
+    /*
+    return {'color': eventFormat === 'InPerson' ? 'green' :  
+         eventFormat === 'Online' ? 'red' : '#aaa'} ;
+    */
+    // string return with if condition
+    if (eventFormat === 'InPerson') {
+      return {color: 'green'};
+    } else if (eventFormat === 'Online') {
+      return {color: 'red'};
+    }
+    return {color: '#aaa'};
+    
+  } 
+
 }

@@ -3,7 +3,18 @@
     <span style="color:green">In Person</span> <span style="color:red">Online</span> <span style="color:#aaa">TBD</span>
   </div>
   <div *ngFor="let event of events" class="well hoverwell thumbnail">
-    <h2>{{event.name}}</h2>
+    <div [ngStyle]="getTitleStyle(event.format)" >
+      <!-- inline ngStyle usage 
+      <div [ngStyle]="{'color': event?.format === 'InPerson' ? 'green' :  
+         event?.format === 'Online' ? 'red' : '#aaa'
+                      }" >
+      -->
+      <!-- style binding
+        <div [style.color]="event?.format === 'InPerson' ? 'green' :  
+         event?.format === 'Online' ? 'red' : '#aaa'"> 
+      -->
+      <h2>{{event.name}}</h2>
+    </div>
     <div>Date: {{event.date}}</div>
     <div>Time: {{event.time}}</div>
     <div *ngIf="event.location">
