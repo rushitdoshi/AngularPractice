@@ -1,6 +1,6 @@
-import { Component } from '@angular/core'
-import { EventService } from './event.service'
-import { ActivatedRoute } from '@angular/router'
+import { Component } from '@angular/core';
+import { EventService } from './event.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'event-details',
