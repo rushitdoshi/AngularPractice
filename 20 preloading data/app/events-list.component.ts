@@ -12,11 +12,13 @@ import { EventService } from './event.service'
   `]
 })
 export class EventsListComponent {
+
+  events: any[];
   constructor(private eventService:EventService, private route:ActivatedRoute) {
     
   }
   
   ngOnInit() {
-    this.eventService.getEvents().subscribe(events => this.events = events)
+    this.events = this.route.snapshot.data['events']; 
   }
 }

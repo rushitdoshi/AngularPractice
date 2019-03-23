@@ -5,7 +5,8 @@ import { RouterModule } from '@angular/router'
 import { AppComponent } from './app.component';
 import { EventsListComponent } from './events-list.component';
 import { EventService } from './event.service';
-import { appRoutes } from './routes'
+import { appRoutes } from './routes';
+import { EventListResolverService } from './event-list-resolver.service';
 
 @NgModule({
   imports: [ 
@@ -16,7 +17,10 @@ import { appRoutes } from './routes'
     AppComponent,
     EventsListComponent
   ],
-  providers: [ EventService ],
+  providers: [ 
+    EventService,
+    EventListResolverService
+   ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule {
