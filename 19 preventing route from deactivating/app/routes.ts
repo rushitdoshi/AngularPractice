@@ -8,7 +8,8 @@ export const appRoutes:Routes = [
   { path: 'events', component: EventsListComponent },
   { path: 'events/:eventId', 
     component: EventDetailsComponent, 
-    canActivate: [EventDetailsActivator]
+    canActivate: [EventDetailsActivator],
+    canDeactivate: [EventDetailsActivator]
   },
   { path: '', redirectTo: '/events', pathMatch:'full' },
 ]
