@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   template: `
-    <events-list></events-list>
+    <router-outlet></router-outlet>
   `,
 })
 export class AppComponent {
