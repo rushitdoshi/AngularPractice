@@ -18,6 +18,8 @@ import { LoggerService } from './Logger.service'
     ParentComponent,
   ],
   providers: [
+    LoggerService,
+    {provide: SimpleLoggerService, useExisting: LoggerService}
   ],
   bootstrap: [ AppComponent ]
 })
