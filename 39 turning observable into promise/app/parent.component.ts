@@ -25,7 +25,7 @@ export class ParentComponent {
   }
   
   ngOnInit() {
-    // put code here
+    this.promise = this.obs.toPromise();
   }
   
   listen() {
