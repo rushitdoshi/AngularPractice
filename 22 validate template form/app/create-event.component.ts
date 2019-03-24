@@ -10,14 +10,15 @@ import { EventService } from './event.service'
     form { margin-top: 10px; }
     label { display: block; }
     .form-group { margin-top: 5px; }
+    em { color: #E05C65; padding-left:10px; }
   `]
 })
 export class CreateEventComponent {
+  mouseoverEvent: any;
   constructor(private eventService:EventService, private router:Router) {
-    
   }
   
-  saveEvent(event) {
+  saveEvent(event: any) {
     this.eventService.saveEvent(event)
     this.router.navigate(['/events'])
   }
