@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TitleCasePipe } from './title-case.pipe';
 
 @Component({
   selector: 'my-home',
