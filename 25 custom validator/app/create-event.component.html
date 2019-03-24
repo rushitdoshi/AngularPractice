@@ -8,7 +8,9 @@
     <div class="form-group" [ngClass]="{'error': date?.invalid && date?.touched}">
       <label for="date">Date: </label>
       <input formControlName="date" id="date" type="text"/>
-      <em *ngIf="date?.invalid && date?.touched">Required</em>
+      <em *ngIf="date?.errors?.required && date?.touched">Required</em>
+      <em *ngIf="date?.errors?.restrictedDay && date?.touched">Cannot be a {{date.errors.restrictedDay}} </em>
+
     </div>
     <div class="form-group" [ngClass]="{'error': time?.invalid && time?.touched}">
       <label for="time">Time: </label>

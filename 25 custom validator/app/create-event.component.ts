@@ -1,8 +1,9 @@
-import { Component } from '@angular/core'
-import { Router } from '@angular/router'
-import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { EventService } from './event.service'
+import { EventService } from './event.service';
+import { restrictWeekendDates } from './weekday.validator'
 
 @Component({
   selector: 'create-event',
@@ -20,7 +21,7 @@ export class CreateEventComponent {
   eventForm: FormGroup
   location: FormGroup
   name: FormControl = new FormControl('', Validators.required)
-  date: FormControl = new FormControl('', Validators.required)
+  date: FormControl = new FormControl('', [Validators.required, restrictWeekendDates])
   time: FormControl = new FormControl('', Validators.required)
   address: FormControl = new FormControl('', Validators.required)
   city: FormControl = new FormControl('', Validators.required)
@@ -45,12 +46,12 @@ export class CreateEventComponent {
     })
   }
   
-  saveEvent(event) {
+  saveEvent(event: any) {
     this.eventService.saveEvent(event)
     this.router.navigate(['/events'])
   }
   
-  cancel(form) {
+  cancel(form: any) {
     this.router.navigate(['/events'])
   }
 }
