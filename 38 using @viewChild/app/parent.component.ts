@@ -7,7 +7,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
     <h1>Using View Child</h1>
     <div style="display:none">Star Wars</div>
     <div style="display:none">Jaws</div>
-    <div style="display:none">Titanic</div>
+    <div #greatestMovie style="display:none">Titanic</div>
     <div style="display:none">Avatar</div>
     <div style="display:none">The Odd Couple</div>
     <div style="display:none">You've Got Mail</div>
@@ -18,12 +18,13 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class ParentComponent {
   greatest: string;
+  @ViewChild('greatestMovie') movieDivRef: ElementRef;
   
   constructor() {
   }
   
   reveal() {
-    this.greatest = ;
+    this.greatest = this.movieDivRef.nativeElement.innerText;
   }
   
   
