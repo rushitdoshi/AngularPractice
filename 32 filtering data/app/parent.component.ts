@@ -25,12 +25,14 @@ export class ParentComponent implements OnInit {
     { name:  "Avengers 6 - The Marriage of the Hulk", rating: "PG-13" },
     { name:  "Finding Dory's Grandkids", rating: "G" },
   ]
+  displayedMovies: any;
 
   constructor() {
+    this.displayedMovies = this.movies.slice(0);
   }
   
-  filter(rating) {
-
+  filter(rating: string) {
+    this.displayedMovies = this.movies.filter(movie => movie.rating === rating);
   }
 
 }
