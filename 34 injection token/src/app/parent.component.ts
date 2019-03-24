@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { PRIME_TOKEN, PrimeCalc } from './primeCalc.service';
 
 @Component({
   selector: 'parent',
@@ -14,12 +15,12 @@ import { Component, Inject } from '@angular/core';
 export class ParentComponent {
   prime;
   
-  constructor() {
+  constructor(@Inject(PRIME_TOKEN) private primeCalc: PrimeCalc) {
     
   }
   
   getPrime() {
-    // this.prime = 
+    this.prime = this.primeCalc.calculatePrime();
   }
   
 
