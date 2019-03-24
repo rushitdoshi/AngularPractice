@@ -31,6 +31,11 @@ export class MoviesComponent {
   }
   
   ngOnInit() {
+
+    this.route.params.forEach((params: Params) => {
+      this.currentMovie = this.movies.filter(movie => movie.id === +params['id'])[0];
+    });
+
   }
   
 }
