@@ -20,11 +20,11 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http'
 })
 export class ParentComponent {
   appid = "69bc9bb1bbaa496601358677ea57a017";
-  
+  city: string;
   constructor(private http: Http) {}
 
   makeRequest() {
-    this.http.get()
+    this.http.get('http://api.openweathermap.org/data/2.5/weather?q=' + this.city + '&APPID=' + this.appid)
     .map((response: Response) => {
       return response.json();
     })
