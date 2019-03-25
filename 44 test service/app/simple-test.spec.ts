@@ -1,7 +1,0 @@
-describe('A simple test', () => {
-
- 
-
-  
-});
-
