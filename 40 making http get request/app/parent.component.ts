@@ -21,7 +21,13 @@ export class ParentComponent {
   constructor(private http: Http) {}
 
   makeRequest() {
-    
+    this.http.get('https://swapi.co/api/films/')
+      .map((response: Response) => {
+        return response.json();
+      })
+      .subscribe(data => {
+        this.movieList = data.results;
+      });
   }
   
 }
