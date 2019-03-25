@@ -8,13 +8,14 @@ describe('MovieService', () => {
   let mockHttp;
   
   beforeEach(() => {
-    // create mock http here
+    // create mock here
+    mockHttp = jasmine.createSpy('mockHttp', ['post']);
     movieService = new MovieService(mockHttp);  
   })
 
   it('adding a cast member increases the cast member count by one', () => {
     
-    
+    mockHttp.post.and.returnValue(Observable.of(true));
     
     movieService.addCastMember('Rambo I', 'Sylvester', 'Rambo');
     
