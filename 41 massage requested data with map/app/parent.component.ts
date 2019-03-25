@@ -25,6 +25,7 @@ export class ParentComponent {
   
   ngOnInit() {
     this.subject
+    .map((input: string) => input.toUpperCase())
     .subscribe(key => {
       this.output.push(key);
     })
