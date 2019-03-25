@@ -8,7 +8,9 @@ describe('MovieService', () => {
   })
 
   it('adding a cast member increases the cast member count by one', () => {
-    // add code here
+    
+    let mockActorService = jasmine.createSpy('mockActorService', ['canAddMovieToActor']);
+    mockActorService.canAddMovieToActor.and.returnValue(true);
     
     movieService.addCastMember('Sylvester', 'Rambo', mockActorService);
     
