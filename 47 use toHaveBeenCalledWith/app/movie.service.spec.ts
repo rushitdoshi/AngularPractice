@@ -19,8 +19,8 @@ describe('MovieService', () => {
     movieService.addCastMember('Rambo I', 'Sylvester', 'Rambo');
     
     // write expectation here
-    expect(false).toBe(true)
-    
+    expect(mockHttp.post).toHaveBeenCalledWith('/movies/Rambo I', jasmine.any(Object)); 
+
   });
 
   
